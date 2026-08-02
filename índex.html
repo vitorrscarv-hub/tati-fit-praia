@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tati Fit Praia — Biquínis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sky: #4FB8E8;
+    --sky-deep: #1E6E96;
+    --sky-pale: #EAF7FD;
+    --sand: #FBF7F0;
+    --coral: #FF6F52;
+    --coral-dark: #E85234;
+    --ink: #0B2E3D;
+    --white: #FFFFFF;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:'Jost', sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{ font-family:'Fraunces', serif; font-weight:600; line-height:1.15; }
+  a{ text-decoration:none; color:inherit; }
+  img{ display:block; max-width:100%; }
+  .container{ max-width:1080px; margin:0 auto; padding:0 24px; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg, var(--sky) 0%, #7FCBEE 55%, var(--sky-pale) 100%);
+    padding:64px 0 120px;
+    overflow:hidden;
+    text-align:center;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-120px; left:50%;
+    transform:translateX(-50%);
+    width:520px; height:520px;
+    background:radial-gradient(circle, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 70%);
+    border-radius:50%;
+  }
+  .eyebrow{
+    display:inline-block;
+    font-size:13px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--white);
+    background:rgba(11,46,61,0.18);
+    padding:6px 16px;
+    border-radius:999px;
+    margin-bottom:22px;
+    position:relative;
+  }
+  .hero h1{
+    font-size:clamp(32px, 6vw, 54px);
+    color:var(--white);
+    max-width:780px;
+    margin:0 auto 20px;
+    position:relative;
+    text-shadow:0 2px 18px rgba(11,46,61,0.15);
+  }
+  .hero p.sub{
+    font-size:18px;
+    color:rgba(11,46,61,0.85);
+    max-width:520px;
+    margin:0 auto 34px;
+    position:relative;
+  }
+  .btn-cta{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--coral);
+    color:var(--white);
+    font-family:'Jost', sans-serif;
+    font-weight:600;
+    font-size:16px;
+    padding:16px 30px;
+    border-radius:999px;
+    box-shadow:0 10px 30px rgba(232,82,52,0.35);
+    transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+    position:relative;
+  }
+  .btn-cta:hover{
+    transform:translateY(-2px);
+    background:var(--coral-dark);
+    box-shadow:0 14px 34px rgba(232,82,52,0.45);
+  }
+  .btn-cta svg{ width:20px; height:20px; flex-shrink:0; }
+
+  .wave{
+    position:absolute;
+    bottom:-2px; left:0; width:100%; line-height:0;
+  }
+
+  /* ---------- FEATURED MODEL ---------- */
+  .featured{
+    background:var(--sand);
+    padding:70px 0 90px;
+  }
+  .featured .wrap{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+    align-items:center;
+  }
+  .featured .img-frame{
+    position:relative;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(11,46,61,0.18);
+  }
+  .featured .img-frame img{ width:100%; height:100%; object-fit:cover; }
+  .featured .tag{
+    font-size:13px; letter-spacing:2.5px; text-transform:uppercase;
+    color:var(--coral-dark); font-weight:500; margin-bottom:14px; display:block;
+  }
+  .featured h2{ font-size:clamp(26px,4vw,36px); margin-bottom:16px; }
+  .featured p{ font-size:16px; color:#3C5A66; margin-bottom:28px; max-width:420px; }
+  @media (max-width:760px){
+    .featured .wrap{ grid-template-columns:1fr; gap:32px; }
+    .featured{ text-align:center; }
+    .featured p{ margin-left:auto; margin-right:auto; }
+  }
+
+  /* ---------- STORY ---------- */
+  .story{
+    background:var(--white);
+    padding:90px 0 100px;
+  }
+  .section-head{
+    text-align:center;
+    max-width:600px;
+    margin:0 auto 56px;
+  }
+  .section-head .tag{
+    font-size:13px; letter-spacing:2.5px; text-transform:uppercase;
+    color:var(--sky-deep); font-weight:500; margin-bottom:10px; display:block;
+  }
+  .section-head h2{
+    font-size:clamp(26px,4vw,36px);
+    color:var(--ink);
+  }
+  .timeline{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+    max-width:720px;
+    margin:0 auto;
+    position:relative;
+  }
+  .timeline::before{
+    content:"";
+    position:absolute;
+    left:70px;
+    top:8px; bottom:8px;
+    width:2px;
+    background:linear-gradient(180deg, var(--sky) 0%, rgba(79,184,232,0.15) 100%);
+  }
+  .t-item{
+    display:grid;
+    grid-template-columns:100px 1fr;
+    gap:24px;
+    padding:26px 0;
+    position:relative;
+  }
+  .t-year{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:20px;
+    color:var(--sky-deep);
+    text-align:right;
+    padding-top:2px;
+    position:relative;
+  }
+  .t-year::after{
+    content:"";
+    position:absolute;
+    right:-24.5px; top:6px;
+    width:11px; height:11px;
+    background:var(--coral);
+    border:3px solid var(--white);
+    border-radius:50%;
+    box-shadow:0 0 0 2px var(--sky);
+  }
+  .t-text h3{
+    font-size:18px;
+    margin-bottom:6px;
+    color:var(--ink);
+  }
+  .t-text p{
+    font-size:15px;
+    color:#3C5A66;
+  }
+
+  /* ---------- FINAL CTA ---------- */
+  .final-cta{
+    background:linear-gradient(160deg, var(--sky-deep) 0%, var(--sky) 100%);
+    padding:90px 0;
+    text-align:center;
+  }
+  .final-cta h2{ color:var(--white); font-size:clamp(26px,4vw,38px); margin-bottom:14px; }
+  .final-cta p{ color:rgba(255,255,255,0.88); max-width:480px; margin:0 auto 32px; font-size:16px; }
+
+  /* ---------- PRODUCTS ---------- */
+  .products{ padding:90px 0 100px; background:var(--sand); }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+    gap:28px;
+  }
+  .card{
+    border-radius:18px;
+    overflow:hidden;
+    background:var(--white);
+    box-shadow:0 6px 24px rgba(11,46,61,0.08);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .card:hover{ transform:translateY(-4px); box-shadow:0 14px 30px rgba(11,46,61,0.14); }
+  .card-img{ aspect-ratio:4/5; overflow:hidden; }
+  .card-img img{ width:100%; height:100%; object-fit:cover; }
+  .card-body{ padding:18px 20px 22px; }
+  .card-body h3{ font-size:17px; margin-bottom:4px; }
+  .card-body p{ font-size:14px; color:#5B7B87; margin-bottom:14px; }
+  .card-link{
+    font-size:13px; font-weight:600; color:var(--sky-deep);
+    display:inline-flex; align-items:center; gap:6px;
+  }
+  .card-link svg{ width:14px; height:14px; }
+
+  footer{
+    background:var(--ink);
+    color:rgba(255,255,255,0.65);
+    text-align:center;
+    padding:34px 20px;
+    font-size:13px;
+  }
+  footer strong{ color:var(--white); font-family:'Fraunces', serif; font-size:16px; display:block; margin-bottom:6px; }
+
+  /* ---------- FLOATING WHATSAPP ---------- */
+  .float-wpp{
+    position:fixed;
+    bottom:22px; right:22px;
+    width:58px; height:58px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 22px rgba(37,211,102,0.45);
+    z-index:100;
+    transition:transform .2s ease;
+  }
+  .float-wpp:hover{ transform:scale(1.08); }
+  .float-wpp svg{ width:28px; height:28px; fill:white; }
+
+  @media (max-width:560px){
+    .timeline::before{ left:52px; }
+    .t-item{ grid-template-columns:76px 1fr; gap:16px; }
+    .t-year::after{ right:-20.5px; }
+    .hero{ padding:52px 0 100px; }
+  }
+
+  [data-reveal]{
+    opacity:0; transform:translateY(18px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  [data-reveal].is-visible{ opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="eyebrow">Tati Fit Praia</span>
+  <h1>Desde 1946, o biquíni é sinônimo de liberdade. Hoje, essa história cabe em você.</h1>
+  <p class="sub">Biquínis pensados pra quem vive de sol, treino e mar — sem abrir mão de estilo e conforto.</p>
+  <a class="btn-cta" href="https://wa.me/5521982862069?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20conhecer%20os%20biqu%C3%ADnis%20da%20Tati%20Fit%20Praia%20%F0%9F%8C%8A" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.39a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.13-2.9-7C17.17 3.03 14.69 2 12.04 2Zm0 18.13a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.13.82.84-3.05-.2-.31a8.2 8.2 0 0 1-1.26-4.35c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.55-3.7 8.21-8.25 8.21Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.22.89 2.4 1.01 2.57.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28Z"/></svg>
+    Chamar no WhatsApp
+  </a>
+
+  <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none">
+    <path fill="#FBF7F0" d="M0,32 C240,80 480,0 720,24 C960,48 1200,88 1440,40 L1440,90 L0,90 Z"></path>
+  </svg>
+</section>
+
+<!-- FEATURED MODEL (vermelho) -->
+<section class="featured">
+  <div class="container wrap">
+    <div class="img-frame" data-reveal>
+      <img src="images/modelo-vermelho.jpg" alt="Modelo vestindo biquíni vermelho Tati Fit Praia">
+    </div>
+    <div data-reveal>
+      <span class="tag">A cor que nunca sai de moda</span>
+      <h2>Vermelho, do jeito que só a praia brasileira sabe usar</h2>
+      <p>Textura jacquard, alças finas e caimento perfeito. Uma peça que carrega a ousadia da mesma história que começou em 1946 — e que a gente conta a seguir.</p>
+      <a class="btn-cta" href="https://wa.me/5521982862069?text=Oi!%20Quero%20saber%20mais%20sobre%20o%20biqu%C3%ADni%20vermelho" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.39a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.13-2.9-7C17.17 3.03 14.69 2 12.04 2Zm0 18.13a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.13.82.84-3.05-.2-.31a8.2 8.2 0 0 1-1.26-4.35c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.55-3.7 8.21-8.25 8.21Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.22.89 2.4 1.01 2.57.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28Z"/></svg>
+        Perguntar no WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="tag">Uma história de liberdade</span>
+      <h2>A história do biquíni</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="t-item" data-reveal>
+        <div class="t-year">1946</div>
+        <div class="t-text">
+          <h3>Nasce o biquíni, em Paris</h3>
+          <p>O engenheiro francês Louis Réard cria uma peça mínima e ousada, batizada em homenagem ao Atol Bikini. Ela expõe o umbigo pela primeira vez na história do vestuário de praia — e causa escândalo.</p>
+        </div>
+      </div>
+      <div class="t-item" data-reveal>
+        <div class="t-year">Anos 60</div>
+        <div class="t-text">
+          <h3>O biquíni encontra seu lar</h3>
+          <p>Chega ao Brasil e vira parte da rotina nas praias cariocas. O que era tabu na Europa aqui se transforma em símbolo de liberdade, corpo e sol.</p>
+        </div>
+      </div>
+      <div class="t-item" data-reveal>
+        <div class="t-year">Anos 2000</div>
+        <div class="t-text">
+          <h3>O Brasil vira referência mundial</h3>
+          <p>O biquíni brasileiro passa a ditar tendência global — recortes, tecidos e atitude que hoje são copiados no mundo inteiro.</p>
+        </div>
+      </div>
+      <div class="t-item" data-reveal>
+        <div class="t-year">Hoje</div>
+        <div class="t-text">
+          <h3>A Tati Fit Praia dá continuidade a essa história</h3>
+          <p>Peças pensadas pra quem vive de biquíni de verdade: o treino de manhã, a praia à tarde, o dia a dia — com conforto, caimento e estilo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2 data-reveal>Pronta pra vestir essa história?</h2>
+    <p data-reveal>Fale agora com a gente no WhatsApp, tire suas dúvidas e garanta seu biquíni antes de todo mundo.</p>
+    <a class="btn-cta" data-reveal href="https://wa.me/5521982862069?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20conhecer%20os%20biqu%C3%ADnis%20da%20Tati%20Fit%20Praia%20%F0%9F%8C%8A" target="_blank" rel="noopener" style="background:var(--white); color:var(--sky-deep); box-shadow:0 10px 30px rgba(11,46,61,0.25);">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.39a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.13-2.9-7C17.17 3.03 14.69 2 12.04 2Zm0 18.13a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.13.82.84-3.05-.2-.31a8.2 8.2 0 0 1-1.26-4.35c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.55-3.7 8.21-8.25 8.21Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.22.89 2.4 1.01 2.57.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28Z"/></svg>
+      Falar com a Tati Fit Praia
+    </a>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="tag">Coleção</span>
+      <h2>Nossos biquínis</h2>
+    </div>
+
+    <div class="grid">
+      <div class="card" data-reveal>
+        <div class="card-img"><img src="images/modelo-azul-bandeira.jpg" alt="Biquíni azul royal Tati Fit Praia"></div>
+        <div class="card-body">
+          <h3>Azul Royal</h3>
+          <p>Fio dental com caimento clássico, tecido leve e brilho intenso.</p>
+          <a class="card-link" href="https://wa.me/5521982862069?text=Oi!%20Quero%20saber%20mais%20sobre%20o%20biqu%C3%ADni%20azul%20royal" target="_blank" rel="noopener">
+            Perguntar no WhatsApp
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="card" data-reveal>
+        <div class="card-img"><img src="images/modelo-azul-claro.jpg" alt="Biquíni azul claro Tati Fit Praia"></div>
+        <div class="card-body">
+          <h3>Azul Sereno</h3>
+          <p>Semi fio com fivela lateral, sustentação confortável.</p>
+          <a class="card-link" href="https://wa.me/5521982862069?text=Oi!%20Quero%20saber%20mais%20sobre%20o%20biqu%C3%ADni%20azul%20sereno" target="_blank" rel="noopener">
+            Perguntar no WhatsApp
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="card" data-reveal>
+        <div class="card-img"><img src="images/modelo-bege.jpg" alt="Biquíni bege Tati Fit Praia"></div>
+        <div class="card-body">
+          <h3>Bege Areia</h3>
+          <p>Semi fio em tom nude, alça de argola dourada.</p>
+          <a class="card-link" href="https://wa.me/5521982862069?text=Oi!%20Quero%20saber%20mais%20sobre%20o%20biqu%C3%ADni%20bege%20areia" target="_blank" rel="noopener">
+            Perguntar no WhatsApp
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="card" data-reveal>
+        <div class="card-img"><img src="images/modelo-marinho.jpg" alt="Biquíni azul marinho Tati Fit Praia"></div>
+        <div class="card-body">
+          <h3>Marinho Cintura Alta</h3>
+          <p>Calcinha hot pants cintura alta, top com detalhe dourado.</p>
+          <a class="card-link" href="https://wa.me/5521982862069?text=Oi!%20Quero%20saber%20mais%20sobre%20o%20biqu%C3%ADni%20marinho" target="_blank" rel="noopener">
+            Perguntar no WhatsApp
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="card" data-reveal>
+        <div class="card-img"><img src="images/modelo-vinho.jpg" alt="Biquíni vinho Tati Fit Praia"></div>
+        <div class="card-body">
+          <h3>Vinho Tassel</h3>
+          <p>Fio com amarração e detalhe de tassel dourado nas laterais.</p>
+          <a class="card-link" href="https://wa.me/5521982862069?text=Oi!%20Quero%20saber%20mais%20sobre%20o%20biqu%C3%ADni%20vinho" target="_blank" rel="noopener">
+            Perguntar no WhatsApp
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="card" data-reveal>
+        <div class="card-img"><img src="images/flatlay-amarrado.jpg" alt="Biquínis coloridos Tati Fit Praia"></div>
+        <div class="card-body">
+          <h3>Coleção Cores</h3>
+          <p>Verde militar, vinho, vermelho e amarelo — escolha a sua.</p>
+          <a class="card-link" href="https://wa.me/5521982862069?text=Oi!%20Quero%20saber%20mais%20sobre%20a%20cole%C3%A7%C3%A3o%20de%20cores" target="_blank" rel="noopener">
+            Perguntar no WhatsApp
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="card" data-reveal>
+        <div class="card-img"><img src="images/flatlay-alcas.jpg" alt="Biquínis com alças Tati Fit Praia"></div>
+        <div class="card-body">
+          <h3>Kit Alças</h3>
+          <p>Tops ajustáveis em quatro cores, para combinar com qualquer calcinha.</p>
+          <a class="card-link" href="https://wa.me/5521982862069?text=Oi!%20Quero%20saber%20mais%20sobre%20o%20kit%20de%20al%C3%A7as" target="_blank" rel="noopener">
+            Perguntar no WhatsApp
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong>Tati Fit Praia</strong>
+  Biquínis pra viver o mar todos os dias · (21) 98286-2069
+</footer>
+
+<a class="float-wpp" href="https://wa.me/5521982862069?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20conhecer%20os%20biqu%C3%ADnis%20da%20Tati%20Fit%20Praia%20%F0%9F%8C%8A" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.39a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.13-2.9-7C17.17 3.03 14.69 2 12.04 2Zm0 18.13a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.13.82.84-3.05-.2-.31a8.2 8.2 0 0 1-1.26-4.35c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.55-3.7 8.21-8.25 8.21Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.22.89 2.4 1.01 2.57.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28Z"/></svg>
+</a>
+
+<script>
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-visible'); obs.unobserve(e.target); } });
+  }, { threshold:0.15 });
+  document.querySelectorAll('[data-reveal]').forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>
